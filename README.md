@@ -40,5 +40,5 @@ If you want to test it on your machine:
 ---
 
 ## 📝 Developer Notes
-- **Polling:** I used client-side polling (every 3 seconds) for the real-time requirement as it provides a robust experience without the complexity of WebSockets for this scale.
+**Polling:** I used client-side polling (every 3 seconds) for the real-time requirement as it provides a robust experience without the complexity of WebSockets for this scale.
 - **UI Design:** The "Retro Arcade"  theme was chosen to demonstrate creative UI/UX design while meeting all technical requirements.
