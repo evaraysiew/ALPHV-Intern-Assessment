@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ALPHV - Arcade Portal</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet">
+    <style>
+        .font-arcade { font-family: 'Press Start 2P', cursive; }
+        .font-pixel { font-family: 'VT323', monospace; font-size: 1.5rem; }
+    </style>
+</head>
+<body class="bg-indigo-300 text-black font-pixel p-8">
+    
+    <div class="max-w-6xl mx-auto mt-6 p-8 bg-white border-4 border-black shadow-[12px_12px_0_0_#000]">
+        <div class="flex justify-between items-center mb-8 border-b-4 border-black pb-6">
+            <h1 class="text-2xl font-arcade text-black tracking-widest uppercase">PLAYER 1: DATA</h1>
+            <a href="admin.html" class="font-arcade text-xs bg-yellow-400 text-black border-4 border-black px-4 py-3 shadow-[4px_4px_0_0_#000] hover:bg-yellow-300 active:shadow-none active:translate-y-1 active:translate-x-1 transition-all">
+                INSERT COIN (ADMIN)
+            </a>
+        </div>
+
+        <div class="overflow-x-auto border-4 border-black">
+            <table class="min-w-full bg-white">
+                <thead class="bg-blue-400 border-b-4 border-black">
+                    <tr>
+                        <th class="py-4 px-6 text-left font-arcade text-xs text-black uppercase">Timestamp</th>
+                        <th class="py-4 px-6 text-left font-arcade text-xs text-black uppercase">Name</th>
+                        <th class="py-4 px-6 text-left font-arcade text-xs text-black uppercase">Shape</th>
+                        <th class="py-4 px-6 text-left font-arcade text-xs text-black uppercase">Color</th>
+                    </tr>
+                </thead>
+                <tbody id="data-grid" class="divide-y-4 divide-black">
+                    <tr>
+                        <td colspan="4" class="py-6 font-arcade text-sm text-center text-black animate-pulse">LOADING...</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="js/app.js"></script>
+</body>
+</html>

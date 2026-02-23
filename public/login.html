@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ALPHV - Start Screen</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet">
+    <style>
+        .font-arcade { font-family: 'Press Start 2P', cursive; }
+        .font-pixel { font-family: 'VT323', monospace; font-size: 1.5rem; }
+        .arcade-card { border: 6px solid #000; box-shadow: 10px 10px 0 0 #000; }
+        .neon-text { text-shadow: 3px 3px 0 #000; }
+    </style>
+</head>
+<body class="bg-indigo-600 flex items-center justify-center min-h-screen p-6">
+
+    <div class="max-w-4xl w-full grid grid-cols-1 md:grid-cols-2 gap-10">
+        
+        <div class="arcade-card bg-cyan-400 p-8 flex flex-col justify-between items-center text-center">
+            <div>
+                <h2 class="font-arcade text-lg mb-6 neon-text">PLAYER 1</h2>
+                <p class="font-pixel text-black leading-relaxed mb-6">View the real-time data grid without admin privileges.</p>
+            </div>
+            <a href="index.html" class="w-full bg-white border-4 border-black font-arcade text-xs py-4 shadow-[4px_4px_0_0_#000] hover:translate-y-1 hover:translate-x-1 hover:shadow-none transition-all">
+                START GAME
+            </a>
+        </div>
+
+        <div class="arcade-card bg-yellow-400 p-8 flex flex-col justify-between items-center text-center">
+            <div>
+                <h2 class="font-arcade text-lg mb-6 neon-text">BOSS LEVEL</h2>
+                <p class="font-pixel text-black leading-relaxed mb-4">Enter cheat code to access the Admin Portal.</p>
+                <input type="password" id="password" placeholder="CODE" 
+                    class="w-full border-4 border-black p-3 font-pixel text-2xl text-center focus:bg-pink-100 outline-none uppercase mb-4">
+            </div>
+            <button onclick="checkLogin()" class="w-full bg-red-500 text-white border-4 border-black font-arcade text-xs py-4 shadow-[4px_4px_0_0_#000] hover:translate-y-1 hover:translate-x-1 hover:shadow-none transition-all">
+                ACCESS PORTAL
+            </button>
+            <p id="error" class="text-red-700 font-arcade text-[10px] mt-4 hidden">WRONG CODE!</p>
+        </div>
+
+    </div>
+
+    <script>
+        function checkLogin() {
+            const pass = document.getElementById('password').value;
+            const error = document.getElementById('error');
+            
+            // Cheat code for Daren
+            if (pass.toLowerCase() === 'alphv2026') {
+                localStorage.setItem('admin_auth', 'granted');
+                window.location.href = 'admin.html';
+            } else {
+                error.classList.remove('hidden');
+                document.getElementById('password').value = '';
+            }
+        }
+    </script>
+</body>
+</html>

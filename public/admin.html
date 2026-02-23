@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ALPHV - Admin Arcade</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet">
+    <style>
+        .font-arcade { font-family: 'Press Start 2P', cursive; }
+        .font-pixel { font-family: 'VT323', monospace; font-size: 1.5rem; }
+    </style>
+</head>
+<body class="bg-pink-400 text-black font-pixel p-8">
+
+    <div class="max-w-6xl mx-auto p-8 bg-white border-4 border-black shadow-[12px_12px_0_0_#000]">
+        <div class="flex justify-between items-center mb-8 border-b-4 border-black pb-6">
+            <div>
+                <h1 class="text-2xl font-arcade text-black tracking-widest uppercase">BOSS LEVEL: ADMIN</h1>
+                <p class="font-arcade text-[10px] mt-2 text-pink-600">AUTHENTICATED ACCESS</p>
+            </div>
+            
+            <div class="flex items-center space-x-4">
+                <a href="index.html" class="font-arcade text-xs bg-cyan-400 text-black border-4 border-black px-4 py-3 shadow-[4px_4px_0_0_#000] hover:bg-cyan-300 active:shadow-none active:translate-y-1 active:translate-x-1 transition-all">
+                    RETURN TO GAME
+                </a>
+                <button onclick="logout()" class="font-arcade text-xs bg-red-500 text-white border-4 border-black px-4 py-3 shadow-[4px_4px_0_0_#000] hover:bg-red-400 active:shadow-none active:translate-y-1 active:translate-x-1 transition-all">
+                    LOGOUT
+                </button>
+            </div>
+        </div>
+
+        <div id="toast" class="hidden w-full p-4 mb-6 border-4 border-black font-arcade text-xs text-white text-center uppercase tracking-widest shadow-[4px_4px_0_0_#000]"></div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="bg-green-300 p-6 border-4 border-black shadow-[8px_8px_0_0_#000] h-fit">
+                <h2 id="form-title" class="font-arcade text-sm mb-6 text-black uppercase leading-relaxed">SELECT YOUR FIGHTER<br>(ADD SHAPE)</h2>
+                <form id="shape-form">
+                    <input type="hidden" id="item-id" value="">
+                    
+                    <div class="mb-4">
+                        <label class="block font-arcade text-xs text-black mb-2">NAME</label>
+                        <input type="text" id="name" required placeholder="PLAYER 1" class="w-full px-3 py-2 border-4 border-black bg-white focus:outline-none focus:bg-yellow-100 font-pixel uppercase">
+                    </div>
+
+                    <div class="mb-4">
+                        <label class="block font-arcade text-xs text-black mb-2">SHAPE</label>
+                        <input type="text" id="shape" required placeholder="SQUARE" class="w-full px-3 py-2 border-4 border-black bg-white focus:outline-none focus:bg-yellow-100 font-pixel uppercase">
+                    </div>
+
+                    <div class="mb-8">
+                        <label class="block font-arcade text-xs text-black mb-2">COLOR</label>
+                        <div class="flex items-center space-x-4">
+                            <input type="color" id="color" required value="#ff0000" class="h-12 w-12 border-4 border-black p-0 cursor-pointer">
+                            <span id="color-hex" class="text-xl text-black font-pixel uppercase bg-white border-4 border-black px-2 py-1 shadow-[4px_4px_0_0_#000]">#ff0000</span>
+                        </div>
+                    </div>
+
+                    <button type="submit" id="submit-btn" class="w-full bg-red-500 font-arcade text-xs text-white border-4 border-black py-4 shadow-[4px_4px_0_0_#000] hover:bg-red-400 active:shadow-none active:translate-y-1 active:translate-x-1 transition-all uppercase">LEVEL UP (ADD)</button>
+                    <button type="button" id="cancel-btn" class="hidden w-full mt-4 bg-gray-400 font-arcade text-xs text-black border-4 border-black py-4 shadow-[4px_4px_0_0_#000] hover:bg-gray-300 active:shadow-none active:translate-y-1 active:translate-x-1 transition-all uppercase">ABORT MISSION</button>
+                </form>
+            </div>
+
+            <div class="md:col-span-2 overflow-x-auto border-4 border-black">
+                <table class="min-w-full bg-white">
+                    <thead class="bg-purple-400 border-b-4 border-black">
+                        <tr>
+                            <th class="py-4 px-4 text-left font-arcade text-[10px] text-black uppercase">Name</th>
+                            <th class="py-4 px-4 text-left font-arcade text-[10px] text-black uppercase">Shape</th>
+                            <th class="py-4 px-4 text-left font-arcade text-[10px] text-black uppercase">Color</th>
+                            <th class="py-4 px-4 text-center font-arcade text-[10px] text-black uppercase">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="admin-grid" class="divide-y-4 divide-black">
+                        </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/admin.js"></script>
+</body>
+</html>
