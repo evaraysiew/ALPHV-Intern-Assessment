@@ -16,7 +16,7 @@ I used the following tools for this project:
 
 ## 🚀 Live Link
 I have deployed the project here:
-[http://167.71.194.163/alphv_app/public/index.html](http://167.71.194.163/alphv_app/public/login.html)
+(http://167.71.194.163/alphv_app/public/login.html)
 
 ---
 
@@ -42,3 +42,4 @@ If you want to test it on your machine:
 ## 📝 Developer Notes
 - **Polling:** I used client-side polling (every 3 seconds) for the real-time requirement as it provides a robust experience without the complexity of WebSockets for this scale.
 - **UI Design:** The "Retro Arcade"  theme was chosen to demonstrate creative UI/UX design while meeting all technical requirements.
+
